@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 The LineageOS Project
+# Copyright (C) 2021 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,15 +17,15 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff
-$(call inherit-product, vendor/rr/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+# Inherit MIUI Camera
+$(call inherit-product, vendor/MiuiCamera/config.mk)
+
+TARGET_BOOT_ANIMATION_RES := 720
 
 # Inherit from j4primelte device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
-$(call inherit-product, $(LOCAL_PATH)/rr_config.mk)
-
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
@@ -33,7 +33,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 PRODUCT_BRAND := samsung
 PRODUCT_DEVICE := j4primelte
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_NAME := rr_j4primelte
+PRODUCT_NAME := lineage_j4primelte
 PRODUCT_MODEL := Galaxy J4+
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
@@ -42,7 +42,7 @@ TARGET_VENDOR_PRODUCT_NAME := j4primelte
 PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="j4primeltedx-user 9 PPR1.180610.011 J415FXXU2BSDM release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := "google/coral/coral:11/RP1A.200720.009/6720564:user/release-keys"
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys"
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=google/coral/coral:11/RP1A.200720.009/6720564:user/release-keys
+    ro.build.fingerprint=google/redfin/redfin:11/RQ1A.210205.004/7038034:user/release-keys
