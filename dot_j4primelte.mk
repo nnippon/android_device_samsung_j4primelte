@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2021 The DotOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,15 +16,13 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff
-$(call inherit-product, vendor/styx/config/common.mk)
+# Inherit some common DotOS stuff
+$(call inherit-product, vendor/dot/config/common.mk)
 
 # Inherit MIUI Camera
 $(call inherit-product, vendor/MiuiCamera/config.mk)
 
 TARGET_BOOT_ANIMATION_RES := 720
-TARGET_NO_GAPPS := true
-STYX_BUILD_VARIANT := ALPHA
 
 # Inherit from j4primelte device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -35,7 +33,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 PRODUCT_BRAND := samsung
 PRODUCT_DEVICE := j4primelte
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_NAME := styx_j4primelte
+PRODUCT_NAME := dot_j4primelte
 PRODUCT_MODEL := Galaxy J4+
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
