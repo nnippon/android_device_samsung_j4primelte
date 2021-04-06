@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/styx_j4primelte.mk
+    $(LOCAL_DIR)/fluid_j4primelte.mk

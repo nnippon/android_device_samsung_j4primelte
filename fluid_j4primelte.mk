@@ -17,14 +17,18 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff
-$(call inherit-product, vendor/styx/config/common.mk)
+$(call inherit-product, vendor/fluid/config/common_full_phone.mk)
 
 # Inherit MIUI Camera
 $(call inherit-product, vendor/MiuiCamera/config.mk)
 
+#Bootanimation
 TARGET_BOOT_ANIMATION_RES := 720
-TARGET_NO_GAPPS := true
-STYX_BUILD_VARIANT := ALPHA
+
+# Fluid Configuration Stuff
+PRODUCT_PRODUCT_PROPERTIES += \
+  ro.fluid.maintainer=Nippon \
+  ro.fluid.cpu=MSM8917
 
 # Inherit from j4primelte device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -35,7 +39,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 PRODUCT_BRAND := samsung
 PRODUCT_DEVICE := j4primelte
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_NAME := styx_j4primelte
+PRODUCT_NAME := fluid_j4primelte
 PRODUCT_MODEL := Galaxy J4+
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
@@ -44,7 +48,7 @@ TARGET_VENDOR_PRODUCT_NAME := j4primelte
 PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="j4primeltedx-user 9 PPR1.180610.011 J415FXXU2BSDM release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ2A.210305.006/7119741:user/release-keys"
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ2A.210405.005/7181113:user/release-keys"
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=google/redfin/redfin:11/RQ2A.210305.006/7119741:user/release-keys
+    ro.build.fingerprint=google/redfin/redfin:11/RQ2A.210405.005/7181113:user/release-keys
