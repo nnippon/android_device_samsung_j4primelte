@@ -17,10 +17,11 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/styx/config/common.mk)
 
 TARGET_FACE_UNLOCK_SUPPORTED := true
-CIPHER_OFFICIAL := true
+TARGET_NO_GAPPS := true
+STYX_BUILD_VARIANT := OFFICIAL
 
 # Inherit MIUI Camera
 $(call inherit-product, vendor/MiuiCamera/config.mk)
@@ -36,7 +37,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 PRODUCT_BRAND := samsung
 PRODUCT_DEVICE := j4primelte
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_NAME := lineage_j4primelte
+PRODUCT_NAME := styx_j4primelte
 PRODUCT_MODEL := Galaxy J4+
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
